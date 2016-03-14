@@ -101,7 +101,7 @@ Con **ADT** y su opción **-package** también podemos combinar un paquete de di
 
 <sup>La carpeta **Installer Package** incluye un paquete instalable de la aplicación: **cdocs.air**
 
-> Para más información puedes leer: CDOCS : Documentación.
+> Más información en: [**CDOCS : Documentación.**](md/documentation.md "Documentación")
 
 Saludos.
 
