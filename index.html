@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+Aplicación: CDOCS - AIR
+Archivo: index.html
+2004, 2016 Foog.Software.
+Licencia : MIT License (MIT).
+-->
+<html>
+<head>
+<title>CDOCS</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="css/humane-original-foog-min.css" type="text/css" />
+<link rel="stylesheet" href="css/index-min.css" type="text/css" />
+<script src="swf/servicemonitor.swf" type="application/x-shockwave-flash"></script>
+<script src="swf/alivePDFlib.swf" type="application/x-shockwave-flash"></script>
+<script type="text/javascript" src="js/AIRAliases-min.js"></script>
+<!-- <script type="text/javascript" src="js/AIRIntrospector.js"></script> // Utilizar sólo durante el desarrollo de la aplicación AIR con HTML -->
+<script type="text/javascript" src="js/AIRSourceViewer-min.js"></script>
+<script type="text/javascript" src="js/alivePDFWrapper-min.js"></script>
+<script type="text/javascript" src="js/alivePDFgenerator-min.js"></script>
+<script type="text/javascript" src="js/iban-min.js"></script>
+<script type="text/javascript" src="js/humane-min.js"></script>
+<script type="text/javascript" src="js/index-aux-min.js"></script>
+<script type="text/javascript" src="js/index-min.js"></script>
+</head>
+<body>
+<div id="protector"><img id="protector-imagen" src="images/giro_46.gif" alt="" title="" /></div>
+<div id="cabecera"><span id="botones-mnu" class="botones-oculto" onclick="visualizarMnuEmergente(event)"></span></div>
+<div id="continente">
+<div id="margen">
+<div id="margen-logo"><img src="images/icono_0.png" id="imagen-estado" alt="" title="" /></div>
+<div id="margen-inicio"><span id="botones-inicio" class="botones-oculto" onclick="cargarFormulario('portada');">INICIO</span></div>
+</div>
+<div id="contenido"><img src="images/giro_48.gif" id="imagen-pre-carga" alt="" title="" /></div>
+<div id="botonera"><div id="botonera-botones"><span id="botones-nuevo" onclick="restaurarFormulario();" class="botones-oculto">NUEVO</span><span id="botones-imprimir" onclick="imprimirFormulario();" class="botones-oculto">IM<u>P</u>RIMIR</span><span id="botones-validar" onclick="validarFormulario();" class="botones-oculto">&#160;</span></div></div>
+<div id="pie"><span><img src="images/copyleft12.png" alt="Copyleft" title="Copyleft" class="imagen-medio"></span><span>&#160;2004&#160;&#45;&#160;</span><span id="pie-anualidad-corriente">&#160;</span><span>&#160;Foog.Software</span></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<application xmlns="http://ns.adobe.com/air/application/2.6">
+<id>es.foog.cdocs.air</id>
+<name>
+<text xml:lang="es">CDOCS 0.1.0 : Foog.Software.</text>
+</name>
+<versionNumber>0.1.0</versionNumber>
+<versionLabel>0.1.0 - Beta</versionLabel>
+<filename>cdocs</filename>
+<description>
+<text xml:lang="es">Comprueba el código de documentos bancarios y de identidad españoles.</text>
+</description>
+<copyright>Foog.Software.</copyright>
+<initialWindow>
+<content>index.html</content>
+<title>CDOCS</title>
+<systemChrome>standard</systemChrome>
+<transparent>false</transparent>
+<visible>false</visible>
+<minimizable>true</minimizable>
+<maximizable>false</maximizable>
+<resizable>false</resizable>
+<width>642</width>
+<height>396</height>
+<x>100</x>
+<y>100</y>
+</initialWindow>
+<installFolder>foog/cdocs</installFolder>
+<programMenuFolder>foog/cdocs</programMenuFolder>
+<icon>
+<image16x16>images/icon_16.png</image16x16>
+<image32x32>images/icon_32.png</image32x32>
+<image48x48>images/icon_48.png</image48x48>
+<image128x128>images/icon_128.png</image128x128>
+</icon>
+<customUpdateUI>true</customUpdateUI>
+<allowBrowserInvocation>true</allowBrowserInvocation>
+</application>

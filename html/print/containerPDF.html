@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CDOCS : PDF</title>
+<meta charset="UTF-8">
+<style type="text/css">
+html,body{
+color: #C8C8C8;
+background-color:#E0E0E0;
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size:14px;
+font-weight:bold;
+}
+#contenedorPDF{
+top:1%; left:1%;
+position:absolute;
+width:98%;
+height:98%;
+} 
+
+#contenidoPDF{
+position:relative;
+width:100%;
+height:100%;
+background-color:#565656;
+}
+#contenidoPDF-bastidor{
+position:relative;
+width:100%;
+height:40%;
+visibility: hidden;
+}
+#contenidoPDF-imagen{
+width:100%;
+height: 64px;
+text-align:center;
+visibility: visible;
+}
+#contenidoPDF-mensaje{
+margin-top:14px;
+width:100%;
+text-align:center;
+visibility: visible;
+}
+</style>
+<script type="text/javascript">
+var archivoPDF = decodeURI(window.location.search.substring(1));
+var formatoCorrecto = (/\.pdf$/i.test(archivoPDF)) ? true : false;
+var nombreArchivo = ""
+if(formatoCorrecto){
+nombreArchivo = archivoPDF.substr(archivoPDF.lastIndexOf("/") + 1, archivoPDF.length);
+if(/^cccss/i.test(nombreArchivo)){
+document.title = "CDOCS : CCC (SS) PDF";
+}else if(/^iban/i.test(nombreArchivo)){
+document.title = "CDOCS : IBAN PDF";
+}else if(/^documentation/i.test(nombreArchivo)){
+document.title = "CDOCS : DOCUMENTACIÓN";
+}else if(/^air_sdk_license/i.test(nombreArchivo)){
+document.title = "ADOBE® AIR® SDK — LICENCIA";
+}else{
+document.title = "CDOCS : " + nombreArchivo.substr(0,3).toUpperCase() +" PDF";
+}
+}
+function visualizarPDF(){
+	var espera;
+	clearTimeout(espera);
+	
+		document.getElementById("contenidoPDF-imagen").style.visibility = "hidden";
+		document.getElementById("contenidoPDF-mensaje").innerHTML = "&#160;";
+		document.getElementById("contenidoPDF-bastidor").style.width = "100%";
+		document.getElementById("contenidoPDF-bastidor").style.height = "100%";
+		espera = setTimeout(function(){
+		document.getElementById("contenidoPDF-bastidor").style.visibility = "visible";
+	}, 500);
+}
+function mostrarError(){
+	document.title = "CDOCS : ERROR PDF";
+	document.getElementById("contenidoPDF-bastidor").style.width = "100%";
+	document.getElementById("contenidoPDF-bastidor").style.height = "40%";
+	document.getElementById("contenidoPDF-bastidor").style.visibility = "hidden";
+	document.getElementById("contenidoPDF-imagen-icono").src = "../../../images/alerta_64_invert.png";
+	document.getElementById("contenidoPDF-imagen").style.visibility = "visible";
+	document.getElementById("contenidoPDF-mensaje").innerHTML = "<div>Se ha producido un error en el proceso de visualización del archivo PDF.</div><div>Cierra esta ventana e intenta de nuevo la operación. Gracias.</div>";
+}
+
+window.onload=function(){
+	if (!formatoCorrecto){
+		mostrarError();
+	}else{
+	//window.runtime.trace(archivoPDF);
+	document.getElementById("contenidoPDF-mensaje").innerHTML = "<p>Cargando archivo: </p><p>" +  nombreArchivo + "</p>";
+		document.getElementById("contenidoPDF-bastidor").addEventListener('error',mostrarError,false);
+		document.getElementById("contenidoPDF-bastidor").addEventListener('load',visualizarPDF,false);
+		document.getElementById("contenidoPDF-bastidor").src = archivoPDF;
+	}
+};
+</script>
+</head>
+<body>
+<div id="contenedorPDF">
+<div id="contenidoPDF">
+<iframe id="contenidoPDF-bastidor" src="about:blank"></iframe>
+<div id="contenidoPDF-imagen"><img id="contenidoPDF-imagen-icono" src="../../../images/pdf_64.png" title="" alt="" /></div>
+<div id="contenidoPDF-mensaje">&#160;</div>
+</div>
+</div>
+</body>
+</html>

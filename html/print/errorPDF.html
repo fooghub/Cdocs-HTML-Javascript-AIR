@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CDOCS : ERROR</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../../css/index.css" type="text/css" />
+<script type="text/javascript">
+var datos = decodeURI(window.location.search.substring(1));
+datos = datos.split("|");
+var titular = "", mensaje = ""; 
+switch(datos[0]){
+case "3200" :
+if(datos[1] && datos[2]){
+mensaje ="<div class='texto-centrado'>Error inesperado en la elaboración  del archivo:</div><div class='texto-falsa-negrita texto-centrado'>" + datos[1] +"</div><div class='texto-centrado'>" + datos[2] + "</div><div class='texto-centrado'>Intenta la operación de nuevo. Gracias!</div><hr class='separador' />";
+}else{
+mensaje ="<p class='texto-centrado'>Error inesperado en la elaboración del documento PDF.</p><p>Intenta la operación de nuevo. Gracias!</p><hr class='separador' />";
+}
+titular = "¡ERROR CREACIÓN PDF!";
+break;
+case "3201" :
+mensaje ="<div>Para visualizar archivos en formato PDF desde cualquier aplicación AIR es imprescindible disponer del reproductor estándar, multiplataforma y gratuito <span class='texto-falsa-negrita'>Adobe READER, versión 8.1 ó superior</span>, que puedes descargar desde la página oficial:</div><div class='texto-centrado enlaceReader'><a href='#' class='enlaceTexto' onclick='abrirEnNavegador();'>https://get.Adobe.com/es/reader/</a></div><div>Gracias.</div><hr class='separador' />";
+titular = "¡ERROR CAPACIDAD PDF!";
+break;
+case "3202" :
+mensaje ="<div>Para visualizar archivos en formato PDF desde cualquier aplicación AIR es imprescindible disponer del reproductor estándar, multiplataforma y gratuito Adobe READER, <span class='texto-falsa-negrita'>versión 8.1 ó superior</span>, que puedes descargar desde la página oficial:</div><div class='texto-centrado enlaceReader'><a href='#' class='enlaceTexto' onclick='abrirEnNavegador();'>https://get.Adobe.com/es/reader/</a></div><div>Gracias.</div><hr class='separador' />";
+titular = "¡ERROR CAPACIDAD PDF!";
+break;
+case "3203" :
+mensaje ="<div>Se detecta una versión suficiente (8.1 o posterior) de Adobe READER. Pero la <span class='texto-falsa-negrita'>establecida por defecto</span> es anterior a la mínima necesaria.</div><div>Para un buen funcionamiento de esta aplicación conviene configurar como preferente la mayor de las versiones de Adobe READER instalada.</div><div>Gracias.</div><hr class='separador' />";
+titular = "¡ERROR CAPACIDAD PDF!";
+break;
+case "3204" :
+mensaje ="<div>Se detecta una versión suficiente (8.1 o posterior) de Adobe READER, pero el sistema operativo devuelve un <span class='texto-falsa-negrita'>error inesperado</span>.</div><div>Si el error persiste conviene actualizar o reinstalar Adobe READER.</div><div>Gracias.</div><hr class='separador' />";
+titular = "¡ERROR CAPACIDAD PDF!";
+break;
+case "3205" :
+mensaje ="<div><span class='texto-falsa-negrita'>Error inesperado e indefinido</span>. Si el error persiste conviene actualizar o reinstalar Adobe READER.</div><div>Gracias.</div><hr class='separador' />";
+titular = "¡ERROR CAPACIDAD PDF!";
+break;
+default:
+titular = "¡ERROR!";
+mensaje ="<p class='texto-centrado'>Error indefinido en la elaboración del documento PDF.</p><p class='texto-centrado'>Intenta la operación de nuevo. Gracias!</p><hr class='separador' />";
+break;
+}
+
+
+function abrirEnNavegador(){	
+	var enlace = new window.runtime.flash.net.URLRequest("https://get.Adobe.com/es/reader/");
+	window.runtime.flash.net.navigateToURL(enlace);	
+}
+
+
+window.onload=function(){
+document.getElementById("ventana-errorPDF-titular").innerHTML = titular;
+document.getElementById("ventana-errorPDF-mensaje").innerHTML = mensaje;
+}
+
+</script>
+</head>
+<body>
+<div id="ventana-errorPDF">
+<p id="ventana-errorPDF-titular" class="texto-centrado">&#160;</p>
+<p class="texto-centrado"><img src="../../images/alerta_128.png" alt="" title=""></p>
+<p id="ventana-errorPDF-mensaje">&#160;</p>
+</div>
+</body>
+</html>

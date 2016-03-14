@@ -1,0 +1,3 @@
+CDOCS 0.1.0 BETA - Lanzamiento inicial.
+Es una reedición de VDOCS 1.6.1
+-------------
