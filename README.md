@@ -1,5 +1,7 @@
 # Cdocs-HTML-Javascript-AIR
 
+![Imagen](md/img/icon_64.png "CDOCS")
+
 **CDOCS** (Comprueba Documentos) es una aplicación divulgativa, de escritorio, gratuita y de Código Abierto. Para **Windows** y **Mac** OS, con el motor de ejecución  **Adobe® AIR®**.
 
 Mediante el cálculo del dígito o dígitos de control, pretende comprobar la consistencia o veracidad de los números de algunos documentos de identificación personal, fiscal y laboral, de la Administración española. También la de algunos códigos de identificación financiera, en el ámbito internacional.
